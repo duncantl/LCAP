@@ -42,5 +42,7 @@ function(doc)
     j = grep("%", bb$text, fixed = TRUE)
     pct = unlist(regmatches(bb$text[j], gregexpr("[0-9.]+%", bb$text[j])))
 
+    # If we didn't find the values via grep(), then we have to identify the boxes in which they are located.
+
     list(amount = amt, percent = pct, text = textInBox)
 }
